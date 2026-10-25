@@ -4,23 +4,23 @@
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.2BETA-R13-PS4-13.52.bin",
-  "payload_size_bytes": 587104,
-  "payload_sha256": "d04dee8546d2113346f6846d1c45f0c0b62cce8b87818abb339202d2bbc954c9",
+  "payload_source_filename": "DEXCORE-1.2BETA-R17-PS4-13.52.bin",
+  "payload_size_bytes": 637184,
+  "payload_sha256": "5280216ae44ddc382f4eda5230b62b1a84849813ebb428d7fe4c61423b4f7dc3",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
   "host_source": "DEXCORE 1.1 TEST 1 PS4 13.52 archived website (static loader files), retargeted to pre-XAMPP 1.2BETA",
-  "release_reference": "DEXCORE-1.2BETA-R13-PS4-13.52.bin; saved per-field System Information display options, PS4 software and DEXCORE version/revision display",
+  "release_reference": "R17 experimental native cheat execution, companion runtime pack, and R14-R16 overlay fixes",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
   "warnings": [
-    "No hardware test was performed",
-    "Earlier static JS login was removed because GitHub Pages does not provide server-side authentication",
-    "Native modules and Title ID label behavior require console testing"
+    "PS4 hardware testing is required; this release is experimental",
+    "Install the companion runtime pack through FTP before launching a game",
+    "Only exact title/version and expected-byte matches execute; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R13",
+  "payload_runtime_revision": "R17",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -29,5 +29,13 @@
     "native_icon_path": "/data/hen/shellui_data/icons/dexcore_icon_a32270886169.png",
     "native_icon_bytes": 38241,
     "website_logo_bytes": 359276
+  },
+  "cheat_runtime_pack": {
+    "path": "downloads/DEXCORE-R17-Cheats-Integration.zip",
+    "size_bytes": 5081286,
+    "sha256": "64dc97c4870919d26089e257265320fef6fe3d254526783d836292a2c7090549",
+    "install_path": "/data/hen/cheats/runtime",
+    "trainer_variants": 5747,
+    "hardware_tested": false
   }
 }

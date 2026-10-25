@@ -1,0 +1,25 @@
+DEXCORE 1.2BETA R17 - Experimental cheat integration for PS4 13.52
+
+This package contains the R17 BIN and a companion runtime data pack compiled from your PS4 JSON, SHN and MC4 collection. Data files remain separate from the BIN. Published as an experimental R17 PS4 testing build on the DEXCORE GitHub host.
+
+INSTALL
+1. Fully reboot the PS4. Load the R17 BIN with Write plugin files to HDD enabled so the new loader and Settings plugin replace the previous files.
+2. Extract this ZIP on a computer. Using FTP, copy the contents of data/hen/cheats/runtime to /data/hen/cheats/runtime on the PS4. Keep the title/version subfolders intact. Install the pack before launching the game.
+3. Start a supported game. Open Settings > DEXCORE > Cheats & Patches. The session must show the running title and exact application version.
+4. Select Trainer, choose one source variant, and return to the Cheats & Patches page. Enable Cheats, then open Cheat Options and choose individual toggles or buttons.
+5. Resume the game to process queued requests. Return and use Refresh Game / Status to inspect the result. A paused game may not process requests while Settings is open.
+6. Turn Enable Cheats Off and resume the game to restore owned reversible patches. Restart the game to clear one-shot changes. Every new game session starts with cheats Off.
+
+BEHAVIOR AND LIMITS
+- Only exact title/version matches are exposed. A different revision may have different executable bytes, even with the same application version, and will be refused when expected bytes differ.
+- Toggle patches save original bytes and verify memory before writing or restoring. Conflicting active patches are refused. A failed rollback stops further writes until the game is restarted.
+- Buttons apply once. They do not promise an undo action or continuously frozen health/ammo. A toggle writes its patch once and restores it when disabled.
+- Data conversion includes 5,747 trainer variants across 2,309 title/version pairs. The 40,851 options that pass conversion are source entries, including duplicates between formats, not hardware-verified cheats. Another 7,149 entries remain disabled with a reason. Dependent cheats also remain blocked if a required master code cannot run.
+- Nonzero SHN sections, extended address mappings, another executable, unsupported master formats, and invalid byte sequences need further adapters. Imported entries do not all execute yet.
+- Two eligible 60 FPS source options are included: Life Is Strange CUSA03279 v01.01 and Before The Storm CUSA08487 v01.05. These still need console verification.
+- This stage uses an FTP-installed local data pack. Automatic internet downloads and standalone trainer-menu injection are not implemented.
+- No supported session: check the data path, reboot/install R17 plugins, then relaunch the game. This build requires the existing game plugin-loader injection and app_info metadata path to work on the console.
+
+VALIDATION
+Native loader, Mono plugin and full installer builds passed. Host checks passed for memory validation, partial-write rollback, restore retry, master dependencies, conflicts, one-shot buttons, title/version parsing, session isolation, menu command generation and XML parsing. All 5,747 runtime plans loaded through the C parser; wrong title/version and 600 corrupted/truncated/mutated inputs were exercised. The BIN contains exactly the five intended native plugin byte sequences, with bootloader/server/ShellCore unchanged from R16.
+This is experimental. No PS4 hardware execution test has been performed. Back up saves before console testing.

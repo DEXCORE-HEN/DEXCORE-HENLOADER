@@ -56,7 +56,7 @@
       setIntegrity(true, "Size and SHA-256 checks passed");
       if (startAfter) {
         setStatus("Verified. Opening exploit loader…");
-        window.location.assign("loader/jb.html?v=1.2beta-r13-d04dee8546d2");
+        window.location.assign("loader/jb.html?v=1.2beta-r17-5280216ae44d");
       } else { setStatus(supported ? "Files verified. Ready for manual launch." : "Files verified. Launch requires PS4 firmware 13.52."); }
     }).catch(function(err) {
       setIntegrity(false, err.message || "Unknown verification failure");
