@@ -1,17 +1,17 @@
 {
   "name": "DEXCORE",
-  "version": "1.2BETA",
+  "version": "1.8",
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.2BETA-R17-PS4-13.52.bin",
-  "payload_size_bytes": 637184,
-  "payload_sha256": "5280216ae44ddc382f4eda5230b62b1a84849813ebb428d7fe4c61423b4f7dc3",
+  "payload_source_filename": "DEXCORE-1.8-PS4-13.52.bin",
+  "payload_size_bytes": 653760,
+  "payload_sha256": "7576e7f4c0b3a289ae9ec99765fade6c807ae8d6a0cf1314b50bc3203237bbef",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
-  "host_source": "DEXCORE 1.1 TEST 1 PS4 13.52 archived website (static loader files), retargeted to pre-XAMPP 1.2BETA",
-  "release_reference": "R17 experimental native cheat execution, companion runtime pack, and R14-R16 overlay fixes",
+  "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
+  "release_reference": "DEXCORE 1.8: updated version branding and System Information, Cheats On/Off, hold OPTIONS shortcut, mounted game metadata fallback, and silent network client connections",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
@@ -20,7 +20,7 @@
     "Install the companion runtime pack through FTP before launching a game",
     "Only exact title/version and expected-byte matches execute; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R17",
+  "payload_runtime_revision": "R18",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -31,9 +31,9 @@
     "website_logo_bytes": 359276
   },
   "cheat_runtime_pack": {
-    "path": "downloads/DEXCORE-R17-Cheats-Integration.zip",
-    "size_bytes": 5081286,
-    "sha256": "64dc97c4870919d26089e257265320fef6fe3d254526783d836292a2c7090549",
+    "path": "downloads/DEXCORE-1.8-Cheats-Integration.zip",
+    "size_bytes": 5084296,
+    "sha256": "438a34b1a37e9b09fd5e85d3fde28af63ebdcf484dce9b26cee7940d330b5205",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
     "hardware_tested": false

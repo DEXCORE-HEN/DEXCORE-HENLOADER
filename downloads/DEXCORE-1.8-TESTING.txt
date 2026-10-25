@@ -1,0 +1,24 @@
+DEXCORE 1.8 - PS4 13.52 local testing build
+
+CHANGES
+- FTP, Klog and BinLoader client connect/disconnect notifications removed. Server startup failures still notify.
+- Persistent Cheats On/Off toggle in the main DEXCORE Settings page and inside Cheats & Patches. The switch remains usable with no running game. Default Off.
+- While Cheats is On, hold OPTIONS for one second to open Cheats & Patches through the native Settings launcher. Release before another hold. A normal tap keeps the PS4's normal behavior. This opens a menu; it does not add a row to the game's own pause menu.
+- Mounted /app0/sce_sys/param.sfo provides the running game's title/version if the older ShellCore app_info path is unavailable. Game sessions appear even if trainer files are missing.
+- Runtime pack and current-game status are separate. The first exact-version trainer with executable options is selected automatically. Trainers with an unsupported required master code remain blocked.
+- Global Off clears queued toggle requests and restores active reversible patches when the game runs again. Button requests are one-shot and may not be reversible. Changing trainer clears its requested options. Each new game starts with individual cheats Off.
+
+INSTALL
+1. Fully reboot. Load the 1.8 BIN with Enable Plugins and Write plugin files to HDD enabled.
+2. Extract this package on a computer. Copy data/hen/cheats/runtime to /data/hen/cheats/runtime on the PS4 using FTP. If the existing runtime pack is already installed correctly, it is compatible and need not be recopied.
+3. Open Settings > DEXCORE and turn Cheats On. Launch/relaunch the game after installing 1.8.
+4. Hold OPTIONS for one second, or open Settings > DEXCORE > Cheats & Patches. Check Runtime data pack: Installed and the title/version. Open Cheat Options, select a toggle or button, resume the game, then Refresh Game / Status.
+5. Off restores owned reversible patches on game resume. It does not undo one-shot button changes. Restart the game to clear those changes.
+
+TEST STATUS
+Native loader, Mono, server and installer builds passed. Host tests cover independent enable toggle, trainer selection, queued commands, stale-session refusal, missing-session page, XML, one-second hold threshold/latching/routing/Off cancellation, bounded mounted SFO identity parsing, partial-write rollback and restoration, and the actual runtime worker applying/restoring a patch when global Off changes without a new command serial. The final BIN contains exactly the intended five native plugin blobs; bootloader and ShellCore are unchanged from R17. Connection-popup strings are absent from the server plugin and BIN.
+No PS4 hardware test has been performed. The OPTIONS input/Settings route and mounted metadata fallback require console verification. Unsupported memory sections and formats remain blocked rather than guessed. Automatic internet pack downloading is not implemented.
+Published on the DEXCORE GitHub site for PS4 testing.
+
+VERSION DISPLAY
+The installer, startup messages, DEXCORE Settings, overlay version field and PS4 System Information use version 1.8. System Information shows the DEXCORE logo followed by DEXCORE 1.8 beneath the Wi-Fi MAC address.
