@@ -1,0 +1,24 @@
+{
+  "name": "DEXCORE PS4 Cheat Catalog",
+  "file": "DEXCORE-PS4-Cheat-Catalog.zip",
+  "size_bytes": 19682619,
+  "sha256": "11afc945a6fe7d896367a60275de0505e90af372b3dfe4ec42f91e29e08d2a47",
+  "ps4_files": 5750,
+  "title_ids": 1586,
+  "game_version_pairs": 2309,
+  "runtime_execution_available": false,
+  "parts": [
+    {
+      "file": "cheats/collection.part1",
+      "bytes": 10485759,
+      "sha256": "8ff1b0b801252a4221f86c54743bcf99e520270b59e612f6f762f29e2d8423bc",
+      "git_sha": "238ae4d402cc0fcf8e50e6e0028f5ef3773096ed"
+    },
+    {
+      "file": "cheats/collection.part2",
+      "bytes": 9196860,
+      "sha256": "6bf4ca3ba038f8fe24eec90acd3e64fd03b3c1dcd0ac5100095dc1d01a320206",
+      "git_sha": "1ef1dbf7193db5c112c2ca99667c19dedda2413a"
+    }
+  ]
+}

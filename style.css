@@ -6,3 +6,5 @@
 .brand-mark{background:none;clip-path:none;border-radius:50%;overflow:hidden}
 .brand-mark img{display:block;width:100%;height:100%;object-fit:contain}
 .hero-art img{border-radius:50%}
+
+.cheat-download{display:inline-block;padding:14px 20px;border:1px solid #35a9ff;border-radius:10px;background:#0c284d;color:#e1f1ff;text-decoration:none;font-weight:700}.cheat-download:hover,.cheat-download:focus{background:#164477;outline:2px solid #8bd6ff;outline-offset:3px}
