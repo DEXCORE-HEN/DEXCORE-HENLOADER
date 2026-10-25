@@ -1,0 +1,21 @@
+DEXCORE 1.8 R19 - PS4 13.52 PS4 testing build
+
+CHANGES
+- The main DEXCORE menu links to Game Addons. Its duplicate Cheats switch was removed. Only the main Game Addons page has the Cheats On/Off switch; trainer/code subpages do not repeat it.
+- All native Cheats & Patches labels and shortcut messages now say Game Addons. Hold OPTIONS for one second while Cheats is On to open it.
+- System Information XML no longer requires Wi-Fi and MAC words in the same tag when the resource identifies the System Information page. Numeric or localized MAC identifiers use the last MAC row as the anchor; known pages without recognizable MAC identifiers use the end of the list.
+- A runtime fallback appends the logo/version message when a native System Information page exposes MAC rows but the XML path did not add it. It checks for an existing row and excludes DEXCORE System Toggles. The row is refreshed and made visible after native visibility checks.
+- Inspected resource streams are opened once. Consumed XML is returned as a fresh UTF-8 stream even when no edit was needed, avoiding a second read of a possibly cached stream.
+- Version remains DEXCORE 1.8. The internal revision is R19. Loader, server, bootloader, ShellCore, cheat data and runtime are unchanged from the preceding 1.8 build.
+
+INSTALL
+Fully reboot. Load the BIN with Enable Plugins and Write plugin files to HDD enabled so the updated ShellUI plugin and Settings XML are installed. Open Settings > System > System Information and check for the logo and DEXCORE 1.8 beneath the MAC rows. Open Settings > DEXCORE > Game Addons to find the sole Cheats switch. Existing runtime data remains compatible and need not be copied again.
+
+VALIDATION
+Native Mono and installer builds passed. Host checks exercised Wi-Fi/numeric/localized XML layouts, no-MAC fallback, comments, paired tags, stale branding, malformed input, deduplication and unrelated-page exclusion. Mocked native Settings checks exercised inherited properties, runtime row creation, own-page exclusion, visibility refresh and GC handle release. Existing cheat UI tests passed. Final BIN checks confirmed the intended five native plugin blobs, unchanged other four plugins, logo embedding, menu rename and absence of connection notification strings.
+PS4 hardware behavior is not verified. Test the native System Information page on the console after a full reboot.
+
+Published on the DEXCORE GitHub site for PS4 testing.
+
+RUNTIME DATA INSTALLATION
+If the runtime data is not installed, extract this ZIP on a computer and copy data/hen/cheats/runtime to /data/hen/cheats/runtime on the PS4 through FTP. The data is unchanged from the preceding pack. Launch a game, open Settings > DEXCORE > Game Addons, turn Cheats On there and select individual options. Hold OPTIONS for one second to return to Game Addons. Resume the game to process requests; use Refresh Game / Status to check results. Unsupported formats remain disabled; one-shot buttons do not promise undo.
