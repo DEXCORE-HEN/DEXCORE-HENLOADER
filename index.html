@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060c1c">
+  <meta name="description" content="DEXCORE 1.2BETA pre-XAMPP PS4 13.52 HEN host. Static GitHub Pages edition with verified local payload files.">
+  <title>DEXCORE 1.2BETA | PS4 Host</title>
+  <link rel="icon" type="image/png" href="assets/hen_settings_icon.png?v=a32270886169">
+  <link rel="stylesheet" href="style.css?v=1.2beta-r5-d06e31181f1e">
+</head>
+<body>
+<div class="orb orb-one" aria-hidden="true"></div><div class="orb orb-two" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="DEXCORE home"><span class="brand-mark"><img src="assets/hen_settings_icon.png?v=a32270886169" alt="" width="43" height="43"></span><span class="brand-words">DEXCORE<small>PLAYSTATION 4 HOMEBREW</small></span></a>
+    <div class="top-right"><span class="edition">PRE-XAMPP EDITION</span><span class="version-badge">v1.2BETA</span></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> PS4 SYSTEM HOST <span class="slash">/</span> FIRMWARE 13.52</p>
+        <h1 id="hero-title">YOUR CONSOLE.<br><span>YOUR CONTROL.</span></h1>
+        <p class="hero-description">DEXCORE 1.2BETA. The original standalone PS4 HEN host, rebuilt for GitHub Pages — without XAMPP, PHP or a local server.</p>
+        <div class="hero-pills"><span>STATIC HOST</span><span>NATIVE PAYLOAD</span><span>SHA-256 CHECKED</span></div>
+        <a class="hero-scroll" href="#control">OPEN HOST CONSOLE <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art"><div class="art-glow"></div><img src="assets/dexcore-logo.webp?v=02fefff21e3a" alt="Blue DEXCORE PS4 HEN emblem"></div>
+    </section>
+    <section class="system-grid" aria-label="System overview">
+      <div class="mini-stat"><span class="mini-label">BUILD</span><strong>1.2BETA</strong><small>Pre-XAMPP</small></div>
+      <div class="mini-stat"><span class="mini-label">FIRMWARE TARGET</span><strong>13.52</strong><small>PS4 only</small></div>
+      <div class="mini-stat"><span class="mini-label">DEVICE DETECTED</span><strong id="detectedFirmware">Checking…</strong><small id="deviceCaption">Reading browser information</small></div>
+      <div class="mini-stat"><span class="mini-label">PAYLOAD INTEGRITY</span><strong id="integrityState">NOT CHECKED</strong><small id="integrityCaption">Checked before every launch</small></div>
+    </section>
+    <section id="control" class="console-grid">
+      <div class="control-panel panel">
+        <div class="panel-heading"><div><span class="section-number">01 / EXECUTION</span><h2>Host console</h2></div><span class="status-pill"><i></i> FILES LOCAL</span></div>
+        <div class="terminal" role="status" aria-live="polite">
+          <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span>dexcore@ps4:~</span></div>
+          <div class="terminal-output">
+            <p><em>[BOOT]</em> DEXCORE HOST INITIALIZED</p>
+            <p><em>[BUILD]</em> 1.2BETA / TITLE ID VERSION FIX</p>
+            <p><em>[FW]</em> TARGET FIRMWARE 13.52</p>
+            <p><em>[MODE]</em> GITHUB PAGES STATIC HOST</p>
+            <p class="command"><span>&gt;</span> <b id="status">Detecting device…</b><span class="terminal-caret">_</span></p>
+          </div>
+        </div>
+        <div class="host-actions"><button id="loadExploit" class="button button-primary" type="button" disabled><span class="icon-action">▶</span> LOAD DEXCORE 1.2BETA</button><button id="verifyFiles" class="button button-secondary" type="button">VERIFY HOST FILES</button></div>
+        <div class="sub-actions"><button id="toggleAuto" class="text-button" type="button" disabled>AUTO-LOAD: OFF</button><a href="loader/diagnostics.html" class="text-link">RUN DIAGNOSTICS ↗</a></div>
+        <p class="caution">Firmware 13.52 only. This build has not been hardware-validated. Save work and restart the PS4 before a new installation. Exploit attempts can freeze or reboot the system.</p>
+      </div>
+      <aside class="details-panel panel">
+        <div class="panel-heading"><div><span class="section-number">02 / RELEASE</span><h2>What's inside</h2></div></div>
+        <div class="feature"><span class="feature-icon">⌘</span><div><h3>System Toggles</h3><p>Native DEXCORE system menu and developer controls.</p></div></div>
+        <div class="feature"><span class="feature-icon">◷</span><div><h3>Fan management</h3><p>Fan-threshold integrations carried forward from the local build.</p></div></div>
+        <div class="feature"><span class="feature-icon">#</span><div><h3>Title IDs &amp; game versions</h3><p>TitleID R5 metadata/version fixes; console behavior is unverified.</p></div></div>
+        <div class="feature"><span class="feature-icon">⌁</span><div><h3>Native networking</h3><p>FTP and network-server features depend on installed PS4 plugins and settings.</p></div></div>
+        <div class="release-foot"><span>DEFAULT BINARY</span><code>dexcore.bin</code><small>620,320 bytes · SHA-256 locked</small></div>
+      </aside>
+    </section>
+    <section class="notes-section"><div><span class="section-number">03 / INSTALLATION</span><h2>Built for your PS4 browser.</h2><p>Open this GitHub Pages site on a PS4 running firmware 13.52, use <strong>Verify Host Files</strong>, then select <strong>Load DEXCORE</strong>. Other systems can inspect the site and run diagnostics but cannot launch the payload.</p></div><div class="notes-aside"><span>NO XAMPP</span><span>NO SERVER-SIDE LOGIN</span><span>NO TELEMETRY</span></div></section>
+  </main>
+  <footer><span>DEXCORE // 1.2BETA // PRE-XAMPP</span><span>UNTESTED NATIVE BUILD · USE AT YOUR OWN RISK</span></footer>
+</div>
+<script src="device.js?v=1.2beta-github-1"></script>
+<script src="sha256.js?v=1.2beta-github-1"></script>
+<script src="payloads.js?v=1.2beta-r5-d06e31181f1e"></script>
+<script src="app.js?v=1.2beta-r5-d06e31181f1e"></script>
+</body></html>
