@@ -43,7 +43,7 @@
   }
   var module=document.createElement("script");
   module.type="module";
-  module.src="jb.js?v=1.8-r21-a1f304ba09cf";
+  module.src="jb.js?v=1.8-r21-a1f304ba09cf-browser1";
   module.onerror=function(){
     fail("Exploit module failed to load","Missing file, unsupported module syntax, or network error.");
   };

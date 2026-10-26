@@ -351,20 +351,10 @@ function giveUp(reason) {
 }
 
 function failed() {
-  if (ceilingReached()) {
-    giveUp("attempt-ceiling");
-    return;
-  }
-  emit("AUTO-RETRY-AFTER-FAILURE", `attempt=${attemptNumber}`);
-  stopped = false;
-  retryScheduled = false;
-  setTimeout(() => {
-    try {
-      history.replaceState(null, "");
-    } catch {}
-    attemptNumber++;
-    startAttempt();
-  }, AUTO_RETRY_DELAY_MS);
+  // The candidate may already have been mutated. Keep its backing objects alive
+  // and stop here; another attempt could overlap unreclaimed browser allocations.
+  emit("RESTART-REQUIRED", "Failed attempt cannot be safely retried. Fully restart the PS4 before loading again.");
+  giveUp("restart-required");
 }
 
 function releaseAttemptAllocations() {

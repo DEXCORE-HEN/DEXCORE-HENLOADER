@@ -1,4 +1,4 @@
-import { establishPrimitive } from "./core.js?v=henacy-1352-parser-compat1";
+import { establishPrimitive } from "./core.js?v=dexcore-r21-browser-memory1";
 import { installWindowP, pairStatus } from "./mem.js";
 import { int64 } from "./int64.js";
 import { offsetsFor } from "./ps4_offsets.js?v=hen220-1352-1";
@@ -57,6 +57,7 @@ function mark(tag, detail) {
   detail = terse(detail);
   const line = tag + (detail == null || detail === "" ? "" : "  " + detail);
   lines.push(line);
+  if (lines.length > 256) lines.shift();
   if (SHOW_LOG && outEl) {
     // Append one safe text node per entry. Rebuilding the entire log with innerHTML
     // caused increasing DOM churn during the exploit's timing-sensitive phases.
@@ -66,6 +67,7 @@ function mark(tag, detail) {
     else if (/\bOK\b|\bPASS\b|PASS=|ACHIEVED|RUNNING|ARMED/i.test(line)) node.className = "ok";
     node.textContent = line + "\n";
     outEl.appendChild(node);
+    while (outEl.childNodes.length > 256) outEl.removeChild(outEl.firstChild);
     if (lines.length % 12 === 0 || /FAIL|THREW|SUMMARY|PAYLOAD|COMPLETE/.test(tag))
       outEl.scrollTop = outEl.scrollHeight;
   }
