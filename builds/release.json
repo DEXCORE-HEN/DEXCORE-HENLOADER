@@ -5,13 +5,13 @@
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
   "payload_source_filename": "DEXCORE-1.8-R21-PS4-13.52.bin",
-  "payload_size_bytes": 638784,
-  "payload_sha256": "a1f304ba09cf48763667046b366cde1e7943ef7779706c311552d69893c81654",
+  "payload_size_bytes": 639787,
+  "payload_sha256": "e01297a5500f3bd254e686c40515f2c694bc0d096c5e0c7f383f659e1747f330",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
   "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
-  "release_reference": "DEXCORE 1.8 R21: thread-local syscall errors, compatible one-shot data-value cheats, improved trainer selection and per-option status",
+  "release_reference": "DEXCORE 1.8 R21: thread-local syscall errors, compatible one-shot data-value cheats, improved trainer selection and per-option status; corrected flat BIN includes full zero-initialized BSS for browser loading",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
@@ -32,10 +32,12 @@
   },
   "cheat_runtime_pack": {
     "path": "downloads/DEXCORE-1.8-R21-Game-Addons.zip",
-    "size_bytes": 5102819,
-    "sha256": "7473fd2dbf340704ee8a4e48b5d17fbf853863126bc85f0a460df3fc82c47bdf",
+    "size_bytes": 5253394,
+    "sha256": "6fca2872942d799a646cb9c8c97282827369fbd6b22465daee937b43f60ae6c3",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
     "hardware_tested": false
-  }
+  },
+  "payload_build_fix": "flat-bin-bss-coverage",
+  "payload_runtime_end_bytes": 639786
 }

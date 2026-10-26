@@ -12,7 +12,9 @@ Only exact title/version matches are eligible. Unsupported master formats, secti
 
 Native builds and host tests passed. This build has not been verified on PS4 hardware.
 
-BIN: 638784 bytes
-SHA-256: a1f304ba09cf48763667046b366cde1e7943ef7779706c311552d69893c81654
-Pack: 5102819 bytes
-SHA-256: 7473fd2dbf340704ee8a4e48b5d17fbf853863126bc85f0a460df3fc82c47bdf
+BIN: 639787 bytes
+SHA-256: e01297a5500f3bd254e686c40515f2c694bc0d096c5e0c7f383f659e1747f330
+Pack: 5253394 bytes
+SHA-256: 6fca2872942d799a646cb9c8c97282827369fbd6b22465daee937b43f60ae6c3
+
+BROWSER LOAD REPAIR: This corrected BIN includes all zero-initialized globals; the previous file mapped insufficient memory. Embedded plugins and runtime plans are unchanged. If R21 data is already installed, only the corrected BIN is needed. Hardware retesting is required.
