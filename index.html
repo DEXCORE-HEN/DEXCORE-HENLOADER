@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#060c1c">
   <meta name="description" content="DEXCORE 1.8 pre-XAMPP PS4 13.52 HEN host. Static GitHub Pages edition with verified local payload files.">
-  <title>DEXCORE 1.8 R19 | PS4 Testing</title>
+  <title>DEXCORE 1.8 R20 | PS4 Testing</title>
   <link rel="icon" type="image/png" href="assets/hen_settings_icon.png?v=a32270886169">
   <link rel="stylesheet" href="style.css?v=cheats-11afc945a6fe">
 </head>
@@ -15,7 +15,7 @@
 <div class="app">
   <header class="topbar">
     <a class="brand" href="./" aria-label="DEXCORE home"><span class="brand-mark"><img src="assets/hen_settings_icon.png?v=a32270886169" alt="" width="43" height="43"></span><span class="brand-words">DEXCORE<small>PLAYSTATION 4 HOMEBREW</small></span></a>
-    <div class="top-right"><span class="edition">PRE-XAMPP EDITION</span><span class="version-badge">v1.8 R19</span></div>
+    <div class="top-right"><span class="edition">PRE-XAMPP EDITION</span><span class="version-badge">v1.8 R20</span></div>
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
@@ -29,7 +29,7 @@
       <div class="hero-art"><div class="art-glow"></div><img src="assets/dexcore-logo.webp?v=02fefff21e3a" alt="Blue DEXCORE PS4 HEN emblem"></div>
     </section>
     <section class="system-grid" aria-label="System overview">
-      <div class="mini-stat"><span class="mini-label">BUILD</span><strong>1.8 R19</strong><small>PS4 testing build</small></div>
+      <div class="mini-stat"><span class="mini-label">BUILD</span><strong>1.8 R20</strong><small>PS4 testing build</small></div>
       <div class="mini-stat"><span class="mini-label">FIRMWARE TARGET</span><strong>13.52</strong><small>PS4 only</small></div>
       <div class="mini-stat"><span class="mini-label">DEVICE DETECTED</span><strong id="detectedFirmware">Checking…</strong><small id="deviceCaption">Reading browser information</small></div>
       <div class="mini-stat"><span class="mini-label">PAYLOAD INTEGRITY</span><strong id="integrityState">NOT CHECKED</strong><small id="integrityCaption">Checked before every launch</small></div>
@@ -41,34 +41,34 @@
           <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span>dexcore@ps4:~</span></div>
           <div class="terminal-output">
             <p><em>[BOOT]</em> DEXCORE HOST INITIALIZED</p>
-            <p><em>[BUILD]</em> 1.8 R19 / GAME ADDONS TEST</p>
+            <p><em>[BUILD]</em> 1.8 R20 / GAME ADDONS TEST</p>
             <p><em>[FW]</em> TARGET FIRMWARE 13.52</p>
             <p><em>[MODE]</em> GITHUB PAGES STATIC HOST</p>
             <p class="command"><span>&gt;</span> <b id="status">Detecting device…</b><span class="terminal-caret">_</span></p>
           </div>
         </div>
-        <div class="host-actions"><button id="loadExploit" class="button button-primary" type="button" disabled><span class="icon-action">▶</span> LOAD DEXCORE 1.8 R19</button><button id="verifyFiles" class="button button-secondary" type="button">VERIFY HOST FILES</button></div>
+        <div class="host-actions"><button id="loadExploit" class="button button-primary" type="button" disabled><span class="icon-action">▶</span> LOAD DEXCORE 1.8 R20</button><button id="verifyFiles" class="button button-secondary" type="button">VERIFY HOST FILES</button></div>
         <div class="sub-actions"><button id="toggleAuto" class="text-button" type="button" disabled>AUTO-LOAD: OFF</button><a href="loader/diagnostics.html" class="text-link">RUN DIAGNOSTICS ↗</a></div>
         <p class="caution">Firmware 13.52 only. This build has not been hardware-validated. Save work and restart the PS4 before a new installation. Exploit attempts can freeze or reboot the system.</p>
       </div>
       <aside class="details-panel panel">
         <div class="panel-heading"><div><span class="section-number">02 / RELEASE</span><h2>What's inside</h2></div></div>
-        <div class="feature"><span class="feature-icon">⌘</span><div><h3>System Toggles</h3><p>Native controls plus revised System Information logo/version insertion and visibility handling. Console testing is required.</p></div></div>
+        <div class="feature"><span class="feature-icon">⌘</span><div><h3>System Toggles</h3><p>The DEXCORE logo/version sits below the network-address rows, with 32-pixel spacing in the native fallback. Console testing is required.</p></div></div>
         <div class="feature"><span class="feature-icon">◷</span><div><h3>Fan management</h3><p>Fan-threshold integrations carried forward from the local build.</p></div></div>
         <div class="feature"><span class="feature-icon">#</span><div><h3>Title IDs &amp; game versions</h3><p>Per-title metadata/version checks carried forward; console behavior is unverified.</p></div></div>
         <div class="feature"><span class="feature-icon">⌁</span><div><h3>Native networking</h3><p>FTP, Klog and BinLoader client connections are silent. Server startup errors remain visible.</p></div></div>
-        <div class="release-foot"><span>DEFAULT BINARY</span><code>dexcore.bin</code><small>670,272 bytes · SHA-256 locked</small></div>
+        <div class="release-foot"><span>DEFAULT BINARY</span><code>dexcore.bin</code><small>670,336 bytes · SHA-256 locked</small></div>
       </aside>
     </section>
-    <section class="notes-section" id="v18-testing"><div><span class="section-number">1.8 / PS4 TESTING</span><h2>Game Addons integration.</h2><p>DEXCORE 1.8 R19 keeps one Cheats On/Off toggle inside Game Addons, adds System Information display fallbacks, and retains one-second hold OPTIONS access. Native cheat execution uses exact title/version matching, reversible toggles and one-shot buttons. All cheats start Off for each new game session. Unsupported entries show a reason and remain disabled.</p><p><a class="cheat-download" href="downloads/DEXCORE-1.8-R19-Game-Addons.zip?v=95eba066e25a" download>Download 1.8 R19 BIN + Game Addons data pack · 4.85 MiB</a></p><p><a href="loader/dexcore.bin?v=1.8-r19-a277290369ee" download="DEXCORE-1.8-R19-PS4-13.52.bin">Download BIN only</a> · <a href="downloads/DEXCORE-1.8-R19-Game-Addons.sha256">Pack checksum</a> · <a href="downloads/DEXCORE-1.8-R19-TESTING.txt">Installation and testing instructions</a></p><p>Fully reboot and load 1.8 with <strong>Write plugin files to HDD</strong> enabled. On a computer, extract the pack and use FTP to copy <code>data/hen/cheats/runtime</code> to <code>/data/hen/cheats/runtime</code>. Launch a game, then open <strong>Settings → DEXCORE → Game Addons</strong>. Open <strong>Settings → DEXCORE → Game Addons</strong> and turn <strong>Cheats On</strong> there. Hold <strong>OPTIONS for one second</strong> to open Game Addons, then select individual options. The first compatible trainer is selected automatically. Resume the game to process requests; return and refresh to check status.</p><p><strong>Hardware testing required:</strong> native builds and host checks passed, but this release has not been tested on a PS4. The 5,747 trainer variants include duplicate source entries; conversion does not guarantee compatibility. One-shot buttons are not reversible and do not continuously freeze values.</p></div><div class="notes-aside"><span>EXPERIMENTAL 1.8</span><span>EXACT VERSION MATCH</span><span>LOCAL FTP DATA PACK</span></div></section>
+    <section class="notes-section" id="v18-testing"><div><span class="section-number">1.8 / PS4 TESTING</span><h2>Game Addons integration.</h2><p>DEXCORE 1.8 R20 keeps one Cheats On/Off toggle inside Game Addons, moves System Information branding below the address fields with extra spacing, and retains one-second hold OPTIONS access. Native cheat execution uses exact title/version matching, reversible toggles and one-shot buttons. All cheats start Off for each new game session. Unsupported entries show a reason and remain disabled.</p><p><a class="cheat-download" href="downloads/DEXCORE-1.8-R20-Game-Addons.zip?v=1d3037c091a0" download>Download 1.8 R20 BIN + Game Addons data pack · 4.85 MiB</a></p><p><a href="loader/dexcore.bin?v=1.8-r20-d705a333547e" download="DEXCORE-1.8-R20-PS4-13.52.bin">Download BIN only</a> · <a href="downloads/DEXCORE-1.8-R20-Game-Addons.sha256">Pack checksum</a> · <a href="downloads/DEXCORE-1.8-R20-TESTING.txt">Installation and testing instructions</a></p><p>Fully reboot and load 1.8 with <strong>Write plugin files to HDD</strong> enabled. On a computer, extract the pack and use FTP to copy <code>data/hen/cheats/runtime</code> to <code>/data/hen/cheats/runtime</code>. Launch a game, then open <strong>Settings → DEXCORE → Game Addons</strong>. Open <strong>Settings → DEXCORE → Game Addons</strong> and turn <strong>Cheats On</strong> there. Hold <strong>OPTIONS for one second</strong> to open Game Addons, then select individual options. The first compatible trainer is selected automatically. Resume the game to process requests; return and refresh to check status.</p><p><strong>Hardware testing required:</strong> native builds and host checks passed, but this release has not been tested on a PS4. The 5,747 trainer variants include duplicate source entries; conversion does not guarantee compatibility. One-shot buttons are not reversible and do not continuously freeze values.</p></div><div class="notes-aside"><span>EXPERIMENTAL 1.8</span><span>EXACT VERSION MATCH</span><span>LOCAL FTP DATA PACK</span></div></section>
     <section class="notes-section" id="cheat-collection"><div><span class="section-number">CHEAT COLLECTION</span><h2>PS4 cheats, organized.</h2><p>5,750 PS4 cheat files across 1,586 title IDs, indexed by game version. Includes JSON, SHN and MC4 originals, decoded metadata and a searchable CSV. PS5 entries are excluded.</p><p><strong>Original source catalog:</strong> for 1.8 execution, install the compiled runtime pack above. This catalog contains the originals and decoded metadata.</p><p><a class="cheat-download" id="cheats-download" href="#cheat-collection" role="button">Download PS4 cheat collection · 18.8 MiB</a></p><p id="cheats-download-status" role="status" aria-live="polite"></p><p><a href="downloads/DEXCORE-PS4-Cheat-Catalog.sha256">SHA-256 checksum</a></p></div><div class="notes-aside"><span>5,750 FILES</span><span>1,586 TITLE IDs</span><span>2,309 GAME VERSIONS</span></div></section>
     <section class="notes-section"><div><span class="section-number">03 / INSTALLATION</span><h2>Built for your PS4 browser.</h2><p>Open this GitHub Pages site on a PS4 running firmware 13.52, use <strong>Verify Host Files</strong>, then select <strong>Load DEXCORE</strong>. Other systems can inspect the site and run diagnostics but cannot launch the payload.</p></div><div class="notes-aside"><span>NO XAMPP</span><span>NO SERVER-SIDE LOGIN</span><span>NO TELEMETRY</span></div></section>
   </main>
-  <footer><span>DEXCORE // 1.8 R19 // PS4 TESTING</span><span>UNTESTED NATIVE BUILD · USE AT YOUR OWN RISK</span></footer>
+  <footer><span>DEXCORE // 1.8 R20 // PS4 TESTING</span><span>UNTESTED NATIVE BUILD · USE AT YOUR OWN RISK</span></footer>
 </div>
-<script src="device.js?v=1.8-r19-a277290369ee"></script>
-<script src="sha256.js?v=1.8-r19-a277290369ee"></script>
-<script src="payloads.js?v=1.8-r19-a277290369ee"></script>
-<script src="app.js?v=1.8-r19-a277290369ee"></script>
+<script src="device.js?v=1.8-r20-d705a333547e"></script>
+<script src="sha256.js?v=1.8-r20-d705a333547e"></script>
+<script src="payloads.js?v=1.8-r20-d705a333547e"></script>
+<script src="app.js?v=1.8-r20-d705a333547e"></script>
 <script src="cheats-download.js?v=11afc945a6fe"></script>
 </body></html>

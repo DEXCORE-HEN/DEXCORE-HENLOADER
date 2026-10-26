@@ -4,14 +4,14 @@
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.8-R19-PS4-13.52.bin",
-  "payload_size_bytes": 670272,
-  "payload_sha256": "a277290369ee3eddda1c2177e2fcef7d1e196ef26a7c1c3577cc67b69fd5b83c",
+  "payload_source_filename": "DEXCORE-1.8-R20-PS4-13.52.bin",
+  "payload_size_bytes": 670336,
+  "payload_sha256": "d705a333547e5be6ad11da435045d2302d198779c33ce5cc2e9d2fd60bba2d57",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
   "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
-  "release_reference": "DEXCORE 1.8 R19: System Information XML/native fallbacks, Game Addons rename, single Cheats switch inside Game Addons",
+  "release_reference": "DEXCORE 1.8 R20: System Information logo/version moved below native address fields with 32-pixel fallback spacing",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
@@ -20,7 +20,7 @@
     "Install the companion runtime pack through FTP before launching a game",
     "Only exact title/version and expected-byte matches execute; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R19",
+  "payload_runtime_revision": "R20",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -31,9 +31,9 @@
     "website_logo_bytes": 359276
   },
   "cheat_runtime_pack": {
-    "path": "downloads/DEXCORE-1.8-R19-Game-Addons.zip",
-    "size_bytes": 5086234,
-    "sha256": "95eba066e25a2c83c9d52527d192c2619731725ef52ef3bb5f45fb7bc65675e8",
+    "path": "downloads/DEXCORE-1.8-R20-Game-Addons.zip",
+    "size_bytes": 5086656,
+    "sha256": "1d3037c091a0c6050c56688ed6e2be8f80478b26acfc0e8b0577b6bd443c8fea",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
     "hardware_tested": false

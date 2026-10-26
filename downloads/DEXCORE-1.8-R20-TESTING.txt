@@ -1,0 +1,12 @@
+DEXCORE 1.8 R20 - PS4 13.52 PS4 testing build
+
+System Information branding now occupies the final XML list row, after native address fields. A row inserted by older builds is moved instead of duplicated. The native fallback measures sibling row positions and places the complete DEXCORE row below the lowest native row with a 32-pixel gap, keeping the logo and text together. It does not change address text or move Sony rows. The layout refresh is limited to the active System Information page, handles late native relayouts, excludes rows in other parent containers, and stops on page exit.
+
+Fully reboot, load this BIN with Enable Plugins and Write plugin files to HDD enabled, then open Settings > System > System Information. Version remains DEXCORE 1.8; the revision is R20. The existing cheat data pack is unchanged. Game Addons and its sole Cheats toggle are retained. The other four native plugins are byte-identical to R19.
+
+Native Mono and installer builds passed. Host checks exercised XML row ordering after IPv4/IPv6/gateway, relocation of an existing row, idempotence and unrelated pages. Mocked native layout checks verified the 32-pixel gap, unchanged address positions, stable repeated updates, late native row movement, parent-container exclusion, page exit and managed handle cleanup. Final BIN checks verified all five embedded plugins and branding/menu markers. PS4 hardware layout still requires console testing.
+
+Published on the DEXCORE GitHub site for PS4 testing.
+
+GAME ADDONS DATA
+The runtime data is unchanged. If not installed, extract this ZIP on a computer and copy data/hen/cheats/runtime to /data/hen/cheats/runtime through FTP. Open Settings > DEXCORE > Game Addons to use the sole Cheats On/Off switch. Hold OPTIONS for one second while Cheats is On to reopen Game Addons. Resume the game to process requests. Unsupported formats remain disabled.
