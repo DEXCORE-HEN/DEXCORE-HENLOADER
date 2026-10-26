@@ -1,0 +1,18 @@
+DEXCORE 1.8 R21 - PS4 13.52 testing build
+
+1. Fully reboot the PS4 and load R21 with Write plugin files to HDD enabled.
+2. Extract DEXCORE-1.8-R21-Game-Addons.zip on a computer.
+3. Use FTP to replace /data/hen/cheats/runtime with data/hen/cheats/runtime from this pack. Install the updated pack together with the BIN.
+4. Launch a game. Open Settings > DEXCORE > Game Addons and turn Cheats On.
+5. Hold OPTIONS for one second to open Game Addons. Select a trainer and individual options, resume the game, then return and refresh to check status.
+
+R21 fixes thread-local syscall error handling and improves trainer selection/status. Compatible data-value entries can execute once in writable, non-executable module memory. One-shot buttons have no automatic undo and do not continuously freeze values. Reversible code patches still require expected-byte matches.
+
+Only exact title/version matches are eligible. Unsupported master formats, section mappings and other unsupported entries remain disabled with reasons. 5,747 trainer variants include duplicate source formats. Conversion does not prove game compatibility.
+
+Native builds and host tests passed. This build has not been verified on PS4 hardware.
+
+BIN: 638784 bytes
+SHA-256: a1f304ba09cf48763667046b366cde1e7943ef7779706c311552d69893c81654
+Pack: 5102819 bytes
+SHA-256: 7473fd2dbf340704ee8a4e48b5d17fbf853863126bc85f0a460df3fc82c47bdf

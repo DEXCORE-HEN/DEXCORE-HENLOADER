@@ -4,14 +4,14 @@
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.8-R20-PS4-13.52.bin",
-  "payload_size_bytes": 670336,
-  "payload_sha256": "d705a333547e5be6ad11da435045d2302d198779c33ce5cc2e9d2fd60bba2d57",
+  "payload_source_filename": "DEXCORE-1.8-R21-PS4-13.52.bin",
+  "payload_size_bytes": 638784,
+  "payload_sha256": "a1f304ba09cf48763667046b366cde1e7943ef7779706c311552d69893c81654",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
   "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
-  "release_reference": "DEXCORE 1.8 R20: System Information logo/version moved below native address fields with 32-pixel fallback spacing",
+  "release_reference": "DEXCORE 1.8 R21: thread-local syscall errors, compatible one-shot data-value cheats, improved trainer selection and per-option status",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
@@ -20,7 +20,7 @@
     "Install the companion runtime pack through FTP before launching a game",
     "Only exact title/version and expected-byte matches execute; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R20",
+  "payload_runtime_revision": "R21",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -31,9 +31,9 @@
     "website_logo_bytes": 359276
   },
   "cheat_runtime_pack": {
-    "path": "downloads/DEXCORE-1.8-R20-Game-Addons.zip",
-    "size_bytes": 5086656,
-    "sha256": "1d3037c091a0c6050c56688ed6e2be8f80478b26acfc0e8b0577b6bd443c8fea",
+    "path": "downloads/DEXCORE-1.8-R21-Game-Addons.zip",
+    "size_bytes": 5102819,
+    "sha256": "7473fd2dbf340704ee8a4e48b5d17fbf853863126bc85f0a460df3fc82c47bdf",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
     "hardware_tested": false
