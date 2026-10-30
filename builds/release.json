@@ -4,23 +4,23 @@
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
   "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.8-R21-PS4-13.52.bin",
+  "payload_source_filename": "DEXCORE-1.8-R24-PS4-13.52.bin",
   "payload_size_bytes": 639787,
-  "payload_sha256": "e01297a5500f3bd254e686c40515f2c694bc0d096c5e0c7f383f659e1747f330",
+  "payload_sha256": "783801de18827af5dda292725763edd0718c45bd85c8754399f1311e4de58369",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
   "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
-  "release_reference": "DEXCORE 1.8 R21: thread-local syscall errors, compatible one-shot data-value cheats, improved trainer selection and per-option status; corrected flat BIN includes full zero-initialized BSS for browser loading",
+  "release_reference": "DEXCORE 1.8 R24: memory-map section and absolute cheat addressing, automatic Game Addons refresh, visible disabled entry without a running game, and retained flat BIN memory-layout fix",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
   "warnings": [
     "PS4 hardware testing is required; this release is experimental",
-    "Install the companion runtime pack through FTP before launching a game",
-    "Only exact title/version and expected-byte matches execute; unsupported entries remain disabled"
+    "Install the R24 BIN and matching runtime pack together before launching a game",
+    "Code patches require expected-byte matches; data one-shots require writable non-executable mappings; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R21",
+  "payload_runtime_revision": "R24",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -31,13 +31,17 @@
     "website_logo_bytes": 359276
   },
   "cheat_runtime_pack": {
-    "path": "downloads/DEXCORE-1.8-R21-Game-Addons.zip",
-    "size_bytes": 5253394,
-    "sha256": "6fca2872942d799a646cb9c8c97282827369fbd6b22465daee937b43f60ae6c3",
+    "path": "downloads/DEXCORE-1.8-R24-Game-Addons.zip",
+    "size_bytes": 5172305,
+    "sha256": "bd83164904d09042b1d235748acc1d793d5ce59521e12755bcda477e65eb46f9",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
-    "hardware_tested": false
+    "hardware_tested": false,
+    "supported_source_options": 44983,
+    "additional_converted_source_options": 1308
   },
   "payload_build_fix": "flat-bin-bss-coverage",
-  "payload_runtime_end_bytes": 639786
+  "payload_runtime_end_bytes": 639786,
+  "runtime_plan_magic": "DCHT0002",
+  "requires_updated_runtime_pack": true
 }

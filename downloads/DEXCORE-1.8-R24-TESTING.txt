@@ -1,0 +1,29 @@
+DEXCORE 1.8 R24 - Cheat addressing update (PS4 13.52 testing build)
+
+INSTALL THE NEW BIN AND THE MATCHING R24 RUNTIME DATA
+1. Fully reboot the PS4. Load the R24 BIN with Enable Plugins and Write plugin files to HDD enabled.
+2. Extract this ZIP on a computer. Through FTP, replace /data/hen/cheats/runtime with the included data/hen/cheats/runtime directory. The old R21 pack does not contain the newly compiled addressing metadata.
+3. Launch a game, open Settings > DEXCORE > Game Addons, and turn Cheats On. Hold OPTIONS for one second to reopen the menu. Select individual options, resume the game so its worker can apply requests, then return to see status update automatically.
+
+CHANGES
+- Reads the running game's memory mappings through DEXCORE's existing syscall 109 command 4. It does not install GoldHEN or use its kernel services.
+- Adds section-relative addressing using the legacy section ordering reconstructed from the supplied payload. A section supplies a base; the final target must fit entirely in one live readable user-space mapping.
+- Adds absolute addressing with current-process mapping validation. Original XML Absolute flags retained by the catalog are now compiled instead of being ignored.
+- Section tables preserve the supplied build's scan bound, filtering and 128MiB non-executable region splitting. They require its 0x400000 anchor. If that layout is unavailable, section requests fail with an address-mapping error; no guessed rebase or module fallback is used. Absolute and ordinary module-relative modes are independent of that section anchor.
+- Captures a bounded map list before each processed request that needs one, validates ordering/ranges, compares two captures, and refuses changing or unavailable maps. Snapshot allocation is freed after the request, and idle games are not polled for maps.
+- Same-value one-shot data writes remain restricted to writable, non-executable memory. Code writes retain expected-byte checks, backup, conflict checks, rollback and guarded restoration.
+- R24 uses DCHT0002 trainer files. Its reader also accepts the old DCHT0001 files, but old BINs cannot read the R24 pack. Install both updated components together.
+- Auto refresh, greyed-out Game Addons without a live game, the sole Cheats switch, silent network client notifications, System Information layout and the flat BIN BSS loading fix are preserved.
+
+CONVERSION RESULTS
+5,747 trainer variants across 2,309 exact title/version pairs. 44,983 source options pass conversion, 1,308 more than R23, and 3,017 remain blocked. These counts include duplicate source formats and do not mean that every option has been verified on PS4 hardware. Runtime layout, expected-byte and dependency checks can still refuse a converted option.
+
+Still blocked: unsupported master-code formats, other executable targets, inconsistent/missing bytes, oversized writes, and extended logicalOffset/sectionOffset-style metadata. One-shot buttons do not continuously freeze values and have no automatic undo.
+
+VALIDATION
+Native loader, Mono and installer builds passed. All 5,747 rebuilt plans loaded through the actual C parser. Host checks cover section ordering, chunk splitting, absolute/relative targets, protections, malformed indices, gaps, overflow, map service failure, changing snapshots, original module-mode behavior, expected-byte refusal, successful restore, partial-write rollback and data one-shot restrictions. No PS4 hardware test was performed.
+
+BIN: 639787 bytes
+SHA-256: 783801de18827af5dda292725763edd0718c45bd85c8754399f1311e4de58369
+Pack: 5172305 bytes
+SHA-256: bd83164904d09042b1d235748acc1d793d5ce59521e12755bcda477e65eb46f9
