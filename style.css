@@ -8,3 +8,19 @@
 .hero-art img{border-radius:50%}
 
 .cheat-download{display:inline-block;padding:14px 20px;border:1px solid #35a9ff;border-radius:10px;background:#0c284d;color:#e1f1ff;text-decoration:none;font-weight:700}.cheat-download:hover,.cheat-download:focus{background:#164477;outline:2px solid #8bd6ff;outline-offset:3px}
+
+/* R24 PS4 browser and controller accessibility patch. Cursor remains default. */
+button:focus,a:focus,button:focus-visible,a:focus-visible{outline:3px solid #aee6ff;outline-offset:4px;box-shadow:0 0 0 2px #07365f}
+.text-button{min-height:44px;padding:10px 8px}.sub-actions{flex-wrap:wrap}.sub-actions a{display:inline-flex;align-items:center;min-height:44px}
+.ps4-browser .scanlines,.ps4-browser .orb,.ps4-browser .art-glow{display:none}
+.ps4-browser .hero-art img{filter:none}.ps4-browser .panel{box-shadow:none}.ps4-browser .terminal-caret{animation:none}
+.ps4-browser html{scroll-behavior:auto}
+.ps4-browser .system-grid{display:flex;flex-wrap:wrap;background:transparent;gap:0}
+.ps4-browser .mini-stat{width:25%;border:1px solid #29415f}
+.ps4-browser .console-grid{display:flex;align-items:stretch;flex-wrap:wrap}
+.ps4-browser .control-panel{flex:1 1 55%;min-width:300px}.ps4-browser .details-panel{flex:1 1 30%;min-width:250px}
+.ps4-browser .hero{display:flex;align-items:center;justify-content:space-between}
+.ps4-browser .hero-copy{flex:1 1 55%}.ps4-browser .hero-art{flex:1 1 35%}
+.ps4-browser h1{font-size:60px}
+@media(max-width:740px){.ps4-browser .hero{display:block}.ps4-browser .hero-art{height:210px}.ps4-browser .hero-art img{max-height:210px}.ps4-browser .mini-stat{width:50%}.ps4-browser h1{font-size:40px}}
+@media(max-width:500px){.ps4-browser .control-panel,.ps4-browser .details-panel{min-width:0;width:100%}.sub-actions{justify-content:flex-start;gap:12px}}
