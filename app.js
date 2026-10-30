@@ -80,4 +80,42 @@
   deviceCaption.textContent = supported ? "Compatible firmware detected" : "Launch restricted to PS4 13.52";
   setStatus(supported ? "Firmware 13.52 detected. Ready for payload verification." : "Preview mode. Launch requires PS4 firmware 13.52.");
   setButtons();
+}
+  // PS4's cursor stays enabled by default. D-pad focus navigation is opt-in.
+  var navBtn = document.getElementById("navigationMode");
+  var navEnabled = false;
+  var agent = navigator.userAgent || "";
+  if (/PlayStation\\s*4/i.test(agent)) document.body.className += " ps4-browser";
+  function focusableControls() {
+    var nodes = document.querySelectorAll("a[href], button");
+    var result = [];
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!n.disabled && n.offsetWidth > 0 && n.offsetHeight > 0 && n.getAttribute("aria-hidden") !== "true") result.push(n);
+    }
+    return result;
+  }
+  if (navBtn) {
+    navBtn.addEventListener("click", function () {
+      navEnabled = !navEnabled;
+      navBtn.textContent = navEnabled ? "D-PAD NAV: ON" : "D-PAD NAV: OFF";
+      navBtn.setAttribute("aria-pressed", navEnabled ? "true" : "false");
+      if (navEnabled) navBtn.focus();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (!navEnabled) return;
+      var key = event.key || "";
+      var code = event.keyCode;
+      var forward = (key === "ArrowDown" || key === "ArrowRight" || code === 40 || code === 39);
+      var back = (key === "ArrowUp" || key === "ArrowLeft" || code === 38 || code === 37);
+      if (!forward && !back) return;
+      var items = focusableControls();
+      if (!items.length) return;
+      var current = document.activeElement, index = -1;
+      for (var i = 0; i < items.length; i++) { if (items[i] === current) { index = i; break; } }
+      var next = forward ? (index + 1) % items.length : (index < 0 ? items.length - 1 : (index + items.length - 1) % items.length);
+      event.preventDefault();
+      items[next].focus();
+    }, false);
+  }
 })();
