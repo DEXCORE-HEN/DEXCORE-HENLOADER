@@ -80,12 +80,11 @@
   deviceCaption.textContent = supported ? "Compatible firmware detected" : "Launch restricted to PS4 13.52";
   setStatus(supported ? "Firmware 13.52 detected. Ready for payload verification." : "Preview mode. Launch requires PS4 firmware 13.52.");
   setButtons();
-}
   // PS4's cursor stays enabled by default. D-pad focus navigation is opt-in.
   var navBtn = document.getElementById("navigationMode");
   var navEnabled = false;
   var agent = navigator.userAgent || "";
-  if (/PlayStation\\s*4/i.test(agent)) document.body.className += " ps4-browser";
+  if (/PlayStation\s*4/i.test(agent)) document.body.className += " ps4-browser";
   function focusableControls() {
     var nodes = document.querySelectorAll("a[href], button");
     var result = [];
