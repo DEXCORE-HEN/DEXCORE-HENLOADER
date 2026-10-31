@@ -26,51 +26,43 @@
     integrityCaption.textContent = message;
   }
   function checkOne(spec) {
-    return new Promise(function(resolve, reject) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", spec[0], true);
-      xhr.responseType = "arraybuffer";
-      xhr.timeout = 30000;
-      xhr.onload = function() {
-        if (xhr.status !== 200 || !xhr.response) { reject(Error("Host file missing (HTTP " + xhr.status + ").")); return; }
-        var bytes = new Uint8Array(xhr.response);
-        if (bytes.length !== spec[1]) { reject(Error("Size mismatch: clear the PS4 browser cache.")); return; }
-        if (typeof window.HEN_SHA256 !== "function" || window.HEN_SHA256(bytes) !== spec[2]) { reject(Error("SHA-256 mismatch: do not launch this payload.")); return; }
-        resolve(true);
-      };
-      xhr.onerror = function() { reject(Error("Network failure: check the website connection.")); };
-      xhr.ontimeout = function() { reject(Error("Host file download timed out.")); };
-      try { xhr.send(); } catch (_) { reject(Error("Host file request failed.")); }
-    });
+    if(typeof window.HEN_VERIFY_RESOURCE!=="function")return Promise.reject(Error("Verification code did not load. Refresh the website."));
+    return window.HEN_VERIFY_RESOURCE(spec);
   }
-  function checkFiles(startAfter) {
-    if (busy) return;
-    if (startAfter && !supported) return;
-    resetTimer(); autoEnabled = false; autoBtn.textContent = "AUTO-LOAD: OFF";
-    busy = true; verified = false; setButtons();
-    integrityEl.textContent = "CHECKING…"; integrityEl.style.color = "#b5ddff";
-    integrityCaption.textContent = "Checking payload and firmware patch";
-    setStatus("Verifying payload and kernel patch…");
-    Promise.all(files.map(checkOne)).then(function() {
-      verified = true;
-      setIntegrity(true, "Size and SHA-256 checks passed");
-      if (startAfter) {
-        setStatus("Verified. Opening exploit loader…");
-        window.location.assign("loader/jb.html?v=r26.5-cheats-ddead4846867");
-      } else { setStatus(supported ? "Files verified. Ready for manual launch." : "Files verified. Launch requires PS4 firmware 13.52."); }
-    }).catch(function(err) {
-      setIntegrity(false, err.message || "Unknown verification failure");
-      setStatus("Verification failed. Exploit not launched.");
-    }).then(function() { busy = false; setButtons(); });
+  function checkFiles() {
+    if(busy)return;
+    resetTimer();autoEnabled=false;autoBtn.textContent="AUTO-LOAD: OFF";
+    busy=true;verified=false;setButtons();
+    integrityEl.textContent="CHECKING…";integrityEl.style.color="#b5ddff";
+    integrityCaption.textContent="Checking payload and kernel patch";setStatus("Verifying payload and kernel patch…");
+    checkOne(files[0]).then(function(){return checkOne(files[1]);}).then(function(){
+      verified=true;setIntegrity(true,"Size and SHA-256 checks passed");
+      setStatus(supported?"Files verified. Ready for manual launch.":"Files verified. Launch requires PS4 firmware 13.52.");
+    }).catch(function(err){setIntegrity(false,err.message||"Unknown verification failure");setStatus("Verification failed. Exploit not launched.");})
+      .then(function(){busy=false;setButtons();});
+  }
+  function launch() {
+    if(busy||!supported)return;
+    resetTimer();autoEnabled=false;autoBtn.textContent="AUTO-LOAD: OFF";busy=true;setButtons();
+    setStatus("Opening DEXCORE. Files will be verified before launch…");
+    // Drop decoded artwork and animated layers before leaving this document.
+    var images=document.querySelectorAll("img");
+    for(var i=0;i<images.length;i++){images[i].removeAttribute("srcset");images[i].removeAttribute("src");}
+    document.body.textContent="Opening DEXCORE…";
+    // Replace this history entry so the dashboard need not survive in Page Cache.
+    setTimeout(function(){
+      try{window.location.replace("loader/jb.html?v=r26.5-host-memory1");}
+      catch(e){document.body.textContent="Could not open DEXCORE. Reload the website to retry.";}
+    },50);
   }
   function autoTick() {
     if (!autoEnabled || busy || !supported) return;
     var seconds = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
     setStatus("Auto-load in " + seconds + " second" + (seconds === 1 ? "" : "s") + ".");
-    if (seconds === 0) checkFiles(true);
+    if (seconds === 0) launch();
   }
-  btn.addEventListener("click", function(){ checkFiles(true); });
-  verifyBtn.addEventListener("click", function(){ checkFiles(false); });
+  btn.addEventListener("click", function(){ launch(); });
+  verifyBtn.addEventListener("click", function(){ checkFiles(); });
   autoBtn.addEventListener("click", function() {
     if (!supported || busy) return;
     if (autoEnabled) { autoEnabled = false; resetTimer(); autoBtn.textContent = "AUTO-LOAD: OFF"; setStatus("Auto-load canceled. Ready for manual launch."); }
@@ -118,4 +110,5 @@
     }, false);
   }
 })();
+
 

@@ -26,9 +26,9 @@ p{line-height:1.5}a{color:#a4d6ff}#results{padding:0;list-style:none}
 <p><small>If checks pass but DEXCORE still fails, take a photo of the messages on the exploit loader page. Look for PROOF-FAIL, THREW, and the final stage. A working host is not proof of a working kernel exploit.</small></p>
 </main>
 <script src="../device.js"></script>
-<script src="../payloads.js?v=r26.5-cheats-ddead4846867"></script>
+<script src="../payloads.js?v=r26.5-host-memory1"></script>
 
-<script src="../sha256.js"></script>
+<script src="../sha256.js?v=r26.5-host-memory1"></script>
 <script>
 (function(){
 "use strict";
@@ -86,6 +86,7 @@ function resource(name,path,size,hash){
 if(build&&build.payload){
  var files=["jb.js","core.js","mem.js","int64.js","ps4_offsets.js","rpc_worker.js"];
  for(var i=0;i<files.length;i++)resource(files[i],files[i],0,"");
+ resource("Host file verifier","../host-verify.js?v=r26.5-host-memory1",0,"");
  resource("DEXCORE payload",build.payload[0],build.payload[1],build.payload[2]);
  resource("13.52 kernel patch","patches/1352.bin",632,"adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e");
 }else line("bad","Payload selection","payloads.js did not initialize");
@@ -94,4 +95,5 @@ update();
 </script>
 </body>
 </html>
+
 

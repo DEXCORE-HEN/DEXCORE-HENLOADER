@@ -48,5 +48,10 @@
   "payload_internal_version": "1.8",
   "payload_bss_tail_offset": 640602,
   "cache_revision": "r26.5-cheats-ddead4846867",
-  "kernel_patch_changed": false
+  "kernel_patch_changed": false,
+  "host_memory_revision": "r26.5-host-memory1",
+  "host_preflight_location": "Lightweight loader page; sequential checks before exploit import",
+  "host_sha256_auxiliary_typed_array_bytes": 384,
+  "dashboard_artwork_removed_before_launch": true,
+  "launch_navigation_mode": "replace"
 }
