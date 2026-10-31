@@ -1,0 +1,57 @@
+DEXCORE R26.5 - Rebuilt Game Addons / PS4 13.52 local test build
+
+INSTALL AND OPEN
+1. Fully reboot the PS4 before loading DEXCORE-R26.5-PS4-13.52.bin. This clears
+   older HEN, ShellUI and game-worker code. Load the BIN using your payload
+   loader. Enable Plugins must be On. R26.5 automatically verifies/updates its
+   five bundled native PRXs; forcing Write plugin files to HDD is unnecessary.
+2. Through FTP, copy the included data/hen/cheats/runtime folder to
+   /data/hen/cheats/runtime on the PS4. The final folder must contain pack.version
+   and the title/version directories. An already installed full R24 pack can be
+   reused: these 5,747 trainer files are unchanged and compatible. The large data
+   pack stays outside the BIN/browser payload. No PKG is needed.
+3. Launch a game. Press PS, highlight the running game, then OPTIONS > Game Addons.
+   Settings > DEXCORE > Game Addons is also available. The OPTIONS entry appears
+   even when Cheats is Off, so it can be opened to enable Cheats. This is an XMB
+   menu, not an overlay drawn over a running game's picture. An unsupported hook
+   shows its reason in settings, where the menu remains accessible.
+4. Turn Cheats On, select an exact title/version trainer, then open Cheat Options.
+   Controls stay visible and disabled while Off. Unsupported entries display a
+   reason. Requests run through the ShellUI service; status refreshes automatically.
+   Resume the game to see the result. A game-loaded popup shows the trainer/game
+   name, title/version and usable cheat count once per session or enable. If no
+   trainer matches, it uses the Title ID and shows zero available options.
+5. Global Cheats Off restores active reversible codes when live bytes still match.
+   One-shot value changes have no automatic undo. Individual cheats start Off.
+
+REBUILD
+The game is detected independently of session files and game-plugin injection.
+A single ShellUI service verifies the real running PID/AppId/title and reads its
+mounted SFO (patch metadata first). Missing metadata, data pack and runtime errors
+are shown separately; they no longer all become "no game running". It targets the
+verified game through DEXCORE's existing process/map/read-write APIs. A new kernel
+process-info dispatch uses an existing ABI; no firmware offsets were changed.
+Generic user plugins remain supported. The sole Cheats switch, automatic refresh,
+visible grey Game Addons menu when no game is running, silent network connection
+notifications, system layouts and flat-BIN BSS loading fix are preserved.
+
+Memory-map bounds, exact expected bytes, dependencies, conflicts, backups, rollback,
+guarded restore and section/absolute addressing remain enforced. All-blocked trainers
+can be opened to view their unsupported reasons. Updated plugin files are verified
+and replaced through a temporary file so failed writes do not destroy the previous
+file. R25-and-later control paths are separate from older game-worker files.
+
+DATA AND TESTING
+5,747 trainer variants, 2,309 exact title/version pairs, 44,983 converted options and
+3,017 blocked options. Counts include duplicate source formats; they are conversion
+results, not console compatibility claims. Unsupported script formats remain disabled.
+A converted code can still be refused when its live layout or expected bytes differ.
+The popup uses the selected/default trainer's usable count rather than adding duplicate
+variants together. Underlying 1.8 identifiers are retained for configuration compatibility;
+the build revision is R26.5.
+
+Native builds and host fixtures passed, including the actual service, UI, OPTIONS
+integration, installer helper and all 5,747 plans through the C reader. Eight generated
+menu XML resources parse. No PS4 hardware execution was available. See build-manifest.json
+for checksums, test scope and remaining console checks. This build is local and has not
+been published by this rebuild.

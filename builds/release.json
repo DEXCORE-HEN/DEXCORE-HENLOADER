@@ -1,26 +1,27 @@
 {
   "name": "DEXCORE",
-  "version": "1.8",
+  "version": "R26.5",
   "edition": "Pre-XAMPP Github Pages",
   "firmware_target": "13.52",
-  "default_payload": "loader/dexcore.bin",
-  "payload_source_filename": "DEXCORE-1.8-R24-PS4-13.52.bin",
-  "payload_size_bytes": 639787,
-  "payload_sha256": "783801de18827af5dda292725763edd0718c45bd85c8754399f1311e4de58369",
+  "default_payload": "loader/dexcore-r26.5.bin",
+  "payload_source_filename": "DEXCORE-R26.5-PS4-13.52.bin",
+  "payload_size_bytes": 640848,
+  "payload_sha256": "ddead4846867548d396385392e0062d9e912254ecfcae04c30f0274e0ba4ee29",
   "kernel_patch": "loader/patches/1352.bin",
   "kernel_patch_size_bytes": 632,
   "kernel_patch_sha256": "adfb9771904f71cd1f5a82cbded8ac46c7ffeb3df974579535cf711904ac347e",
-  "host_source": "Static PS4 13.52 GitHub Pages host, updated for DEXCORE 1.8",
-  "release_reference": "DEXCORE 1.8 R24: memory-map section and absolute cheat addressing, automatic Game Addons refresh, visible disabled entry without a running game, and retained flat BIN memory-layout fix",
+  "host_source": "Static PS4 13.52 GitHub Pages host for DEXCORE R26.5",
+  "release_reference": "DEXCORE R26.5: rebuilt native Game Addons, independent game detection, real XMB OPTIONS entry, visible cheat controls, automatic native plugin refresh and game-name/cheat-count popup",
   "native_hardware_tested": false,
   "github_pages_published": true,
   "xampp_required": false,
   "warnings": [
     "PS4 hardware testing is required; this release is experimental",
-    "Install the R24 BIN and matching runtime pack together before launching a game",
-    "Code patches require expected-byte matches; data one-shots require writable non-executable mappings; unsupported entries remain disabled"
+    "Fully reboot before loading R26.5 with Enable Plugins On; native plugin files update automatically",
+    "Copy the included runtime folder through FTP if it is missing; existing full R24 compiled runtime data is compatible",
+    "Code patches require expected-byte matches; unsupported entries remain disabled"
   ],
-  "payload_runtime_revision": "R24",
+  "payload_runtime_revision": "R26.5",
   "branding": {
     "website_logo": "assets/dexcore-logo.webp",
     "native_icon": "assets/hen_settings_icon.png",
@@ -31,17 +32,21 @@
     "website_logo_bytes": 359276
   },
   "cheat_runtime_pack": {
-    "path": "downloads/DEXCORE-1.8-R24-Game-Addons.zip",
-    "size_bytes": 5172305,
-    "sha256": "bd83164904d09042b1d235748acc1d793d5ce59521e12755bcda477e65eb46f9",
+    "path": "downloads/DEXCORE-R26.5-Game-Addons.zip",
+    "size_bytes": 5177329,
+    "sha256": "ee7ff77fa613541c50def916e16736eb702a58385cf2b714ca12f7a0f0a10021",
     "install_path": "/data/hen/cheats/runtime",
     "trainer_variants": 5747,
     "hardware_tested": false,
     "supported_source_options": 44983,
-    "additional_converted_source_options": 1308
+    "additional_converted_source_options": 0,
+    "blocked_source_options": 3017
   },
   "payload_build_fix": "flat-bin-bss-coverage",
-  "payload_runtime_end_bytes": 639786,
   "runtime_plan_magic": "DCHT0002",
-  "requires_updated_runtime_pack": true
+  "requires_updated_runtime_pack": false,
+  "payload_internal_version": "1.8",
+  "payload_bss_tail_offset": 640602,
+  "cache_revision": "r26.5-cheats-ddead4846867",
+  "kernel_patch_changed": false
 }
