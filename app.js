@@ -51,7 +51,7 @@
     document.body.textContent="Opening DEXCORE…";
     // Replace this history entry so the dashboard need not survive in Page Cache.
     setTimeout(function(){
-      try{window.location.replace("loader/jb.html?v=r26.5-host-memory1");}
+      try{window.location.replace("loader/jb.html?v=r26.5-nativefix-7fd6775c4c40");}
       catch(e){document.body.textContent="Could not open DEXCORE. Reload the website to retry.";}
     },50);
   }
@@ -110,5 +110,6 @@
     }, false);
   }
 })();
+
 
 

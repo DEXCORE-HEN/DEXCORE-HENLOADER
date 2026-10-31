@@ -45,7 +45,7 @@
     if(reported)return;
     if(message)message.textContent="Files verified. Loading DEXCORE…";
     var module=document.createElement("script");module.type="module";
-    module.src="jb.js?v=r26.5-host-memory1";
+    module.src="jb.js?v=r26.5-nativefix-7fd6775c4c40";
     module.onerror=function(){fail("Exploit module failed to load","Missing file, unsupported module syntax, or network error.");};
     document.head.appendChild(module);
     setTimeout(function(){if(!window.HEN_LOADER_STARTED)fail("Exploit JavaScript never started","Clear website data, fully restart the console, then record the last message if loading still fails.");},15000);
@@ -61,3 +61,4 @@
     setTimeout(startModule,100);
   }).catch(function(error){fail("Host verification failed",error.message||String(error));});
 })();
+

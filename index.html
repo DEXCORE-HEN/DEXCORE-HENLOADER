@@ -3,15 +3,15 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061533">
 <meta name="description" content="DEXCORE R26.5 PS4 13.52 testing host, verified loader and Game Addons.">
-<title>DEXCORE R26.5 · PS4 Host</title>
+<title>DEXCORE R26.5 Loading Fix · PS4 Host</title>
 <link rel="icon" type="image/png" href="assets/hen_settings_icon.png?v=a32270886169">
-<link rel="stylesheet" href="style.css?v=r26.5-host-memory1">
+<link rel="stylesheet" href="style.css?v=r26.5-nativefix-7fd6775c4c40">
 </head><body>
 <div class="background-art" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="app">
 <header class="topbar">
 <a class="brand" href="./" aria-label="DEXCORE home"><img src="assets/hen_settings_icon.png?v=a32270886169" alt="" width="46" height="46"><span>DEXCORE<small>PLAYSTATION 4 SYSTEM HOST</small></span></a>
-<div class="top-right"><span class="build-tag">EXPERIMENTAL BUILD</span><strong>R26.5</strong></div>
+<div class="top-right"><span class="build-tag">NATIVE LOAD FIX</span><strong>R26.5</strong></div>
 </header>
 <nav class="quick-nav" aria-label="Main navigation">
 <a href="#control">01 <span>Dashboard</span></a><a href="#v18-testing">02 <span>Release</span></a><a href="#cheat-collection">03 <span>Game Addons</span></a><a href="loader/diagnostics.html">04 <span>Diagnostics</span></a>
@@ -37,7 +37,7 @@
 <div class="panel control-panel">
 <div class="panel-title"><span class="panel-icon" aria-hidden="true">▶</span><div><strong>DEXCORE LOADER</strong><small>13.52 / TESTING CHANNEL</small></div><span class="pill">R26.5</span></div>
 <div class="status-board" role="status" aria-live="polite"><div class="status-head"><span class="light"></span> SYSTEM RESPONSE <span class="status-version">R26.5</span></div><p id="status">Checking device compatibility…</p></div>
-<div class="host-actions"><button id="loadExploit" class="button button-primary" type="button" disabled>▶ &nbsp; LOAD DEXCORE R26.5</button><button id="verifyFiles" class="button button-secondary" type="button">VERIFY HOST FILES</button></div>
+<div class="host-actions"><button id="loadExploit" class="button button-primary" type="button" disabled>▶ &nbsp; LOAD DEXCORE R26.5 FIX</button><button id="verifyFiles" class="button button-secondary" type="button">VERIFY HOST FILES</button></div>
 <div class="sub-actions"><button id="toggleAuto" class="text-button" type="button" disabled>AUTO-LOAD: OFF</button><button id="navigationMode" class="text-button" type="button" aria-pressed="false">D-PAD NAV: OFF</button><a class="text-link" href="loader/diagnostics.html">RUN DIAGNOSTICS ›</a></div>
 <p class="caution">Firmware 13.52 only. This build is not hardware-validated. Save work before launching; exploits may freeze or restart the console.</p>
 </div>
@@ -47,18 +47,19 @@
 <div class="feature"><span class="feature-icon">◉</span><div><h3>Fan management</h3><p>Threshold options carried forward from the native build.</p></div></div>
 <div class="feature"><span class="feature-icon">▣</span><div><h3>Game information</h3><p>Native running-game detection, exact versions and Game Addons controls.</p></div></div>
 <div class="feature"><span class="feature-icon">⌁</span><div><h3>Native networking</h3><p>FTP, Klog and BinLoader integration.</p></div></div>
-<div class="release-foot"><span>RELEASE BINARY</span><code>dexcore-r26.5.bin</code><small>640,848 bytes · SHA-256 referenced</small></div>
+<div class="release-foot"><span>RELEASE BINARY</span><code>dexcore-r26.5-memory-fix.bin</code><small>640,491 bytes · SHA-256 referenced</small></div>
 </aside></div></section>
-<section class="info-grid" id="v18-testing"><div class="info-intro"><span class="overline">02 / R26.5 RELEASE</span><h2>Game Addons,<br><span>rebuilt.</span></h2><p>R26.5 rebuilds Game Addons with native running-game detection, visible cheat controls, an XMB OPTIONS entry, automatic plugin updates and a game-loaded cheat-count popup. Expected-byte checks and rollback safeguards remain enforced. Real-console testing is still required.</p><span class="info-chip">44,983 CONVERTED SOURCE OPTIONS</span><span class="info-chip">13.52 TARGET</span></div>
-<div class="download-panel"><span class="overline">TESTING PACKAGE</span><h3>Get the latest R26.5 build</h3><p>Fully reboot before loading the rebuilt BIN. Install the included runtime data if it is missing; existing compiled runtime data remains compatible.</p><a class="download-main" href="downloads/DEXCORE-R26.5-Game-Addons.zip?v=ee7ff77fa613" download>↓ DOWNLOAD R26.5 + GAME ADDONS</a><div class="download-links"><a href="loader/dexcore-r26.5.bin?v=r26.5-host-memory1" download="DEXCORE-R26.5-PS4-13.52.bin">BIN only</a><a href="downloads/DEXCORE-R26.5-Game-Addons.sha256">Checksum</a><a href="downloads/DEXCORE-R26.5-TESTING.txt">Install guide</a></div><p class="fineprint">4.94 MiB pack · PS4 hardware testing not complete</p></div></section>
+<section class="info-grid" id="v18-testing"><div class="info-intro"><span class="overline">02 / R26.5 RELEASE</span><h2>Game Addons,<br><span>rebuilt.</span></h2><p>This update corrects a native loading fault and retains the rebuilt Game Addons system, game detection, XMB OPTIONS entry, automatic plugin updates and cheat-count popup. Expected-byte checks and rollback safeguards remain enforced. PS4 testing is still required.</p><span class="info-chip">44,983 CONVERTED SOURCE OPTIONS</span><span class="info-chip">13.52 TARGET</span></div>
+<div class="download-panel"><span class="overline">TESTING PACKAGE</span><h3>Get the R26.5 loading fix</h3><p>Fully reboot before loading the rebuilt BIN. Install the included runtime data if it is missing; existing compiled runtime data remains compatible.</p><a class="download-main" href="downloads/DEXCORE-R26.5-Memory-Fix-Game-Addons.zip?v=78c7f29d1e64" download>↓ DOWNLOAD R26.5 FIX + GAME ADDONS</a><div class="download-links"><a href="loader/dexcore-r26.5-memory-fix.bin?v=r26.5-nativefix-7fd6775c4c40" download="DEXCORE-R26.5-Memory-Fix-PS4-13.52.bin">BIN only</a><a href="downloads/DEXCORE-R26.5-Memory-Fix-Game-Addons.sha256">Checksum</a><a href="downloads/DEXCORE-R26.5-Memory-Fix-TESTING.txt">Install guide</a></div><p class="fineprint">5.07 MiB pack · PS4 hardware testing not complete</p></div></section>
 <section id="cheat-collection" class="library-section"><div><span class="overline">03 / CONTENT LIBRARY</span><h2>Game Addons catalog</h2><p>5,750 PS4 source cheat files across 1,586 title IDs and 2,309 game/version combinations. JSON, SHN and MC4 originals with decoded metadata. For live R26.5 execution, use the compiled runtime pack above.</p></div><div class="library-action"><span class="library-count">5,750 <small>FILES</small></span><a id="cheats-download" class="download-main" href="#cheat-collection" role="button">↓ DOWNLOAD SOURCE CATALOG</a><p id="cheats-download-status" role="status" aria-live="polite"></p><a class="subtle-link" href="downloads/DEXCORE-PS4-Cheat-Catalog.sha256">Catalog checksum</a></div></section>
 <section class="last-note"><div><span class="overline">04 / INSTALLATION</span><h2>Built for the PS4 browser.</h2><p>Open the website on firmware 13.52. Verify host files, then select Load DEXCORE. For cheat testing, fully reboot and load R26.5 with Enable Plugins On. Native plugins update automatically. Copy the included runtime folder to <code>/data/hen/cheats/runtime</code> through FTP if needed. Launch a game, press PS, highlight the running game, then select OPTIONS → Game Addons and turn Cheats On. Settings → DEXCORE → Game Addons is also available.</p></div><a href="loader/diagnostics.html" class="secondary-link">OPEN DIAGNOSTICS ›</a></section>
 </main><footer><span>DEXCORE R26.5 / PLAYSTATION 4</span><span>EXPERIMENTAL BUILD · CONSOLE TESTING REQUIRED</span></footer></div>
-<script src="device.js?v=r26.5-host-memory1"></script>
-<script src="sha256.js?v=r26.5-host-memory1"></script>
-<script src="payloads.js?v=r26.5-host-memory1"></script>
-<script src="host-verify.js?v=r26.5-host-memory1"></script>
-<script src="app.js?v=r26.5-host-memory1"></script>
+<script src="device.js?v=r26.5-nativefix-7fd6775c4c40"></script>
+<script src="sha256.js?v=r26.5-nativefix-7fd6775c4c40"></script>
+<script src="payloads.js?v=r26.5-nativefix-7fd6775c4c40"></script>
+<script src="host-verify.js?v=r26.5-nativefix-7fd6775c4c40"></script>
+<script src="app.js?v=r26.5-nativefix-7fd6775c4c40"></script>
 <script src="cheats-download.js?v=11afc945a6fe"></script>
 </body></html>
+
 

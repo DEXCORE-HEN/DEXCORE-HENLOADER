@@ -1,0 +1,42 @@
+DEXCORE R26.5 - Native updater / flat BIN memory-error correction
+PS4 13.52 testing build
+
+WHAT WAS CORRECTED
+The previous R26.5 BIN stored its five native module paths and data addresses in
+an initialized pointer table. That produced ten R_X86_64_RELATIVE relocations.
+The browser copies a flat BIN into memory and starts it directly; it does not
+run an ELF loader to apply those relocations. The updater therefore received
+invalid low addresses instead of addresses inside the loaded BIN. This is a
+native loading defect and can fault before the DEXCORE loaded notification.
+The earlier browser-memory changes did not correct this native defect.
+
+The updater now passes each module address through position-relative code.
+The installer linker rejects any future runtime relocations. The corrected
+production ELF has zero relocations. No firmware offsets, kernel patches,
+cheat engine features or native plugin binaries were changed for this fix.
+
+INSTALL
+1. Fully reboot the PS4 before retrying. The old failed attempt must be cleared.
+2. Load DEXCORE-R26.5-Memory-Fix-PS4-13.52.bin or the updated website payload.
+   Enable Plugins must be On. Bundled PRX verification/replacement remains automatic.
+3. The existing full R24/R26.5 runtime data is compatible. It does not need to be
+   copied again. For a fresh setup, use FTP to copy the included data/hen/cheats/runtime
+   folder to /data/hen/cheats/runtime on the PS4.
+4. Launch a game. Press PS, highlight the running game, then OPTIONS > Game Addons.
+   Settings > DEXCORE > Game Addons is also available. Turn Cheats On and select
+   a trainer matching the exact title and version. Individual options start Off.
+
+R26.5's native game detection, visible disabled controls, OPTIONS entry,
+automatic plugin updates, game-name/cheat-count popup, map and expected-byte
+checks, rollback and guarded restoration are retained. Unsupported options
+remain visible with a reason. One-shot data writes have no automatic undo.
+
+VERIFICATION
+The original updater's invalid pointers were reproduced by loading its compiled
+flat image at 0x900000000, 0x5000000000 and 0x7000000000, with OS calls mocked.
+The corrected updater passes at all three addresses with forced upload both Off
+and On. The production linker rejects the old implementation. Native PRXs,
+kernel payload, runtime plans and original INI were retained byte-for-byte.
+The BIN includes its entire BSS and still fits the same 640 KiB browser mapping.
+Tests ran on the host; no PS4 hardware execution was available. Console testing
+is still required. The build-time manifest records checksums and validation.
